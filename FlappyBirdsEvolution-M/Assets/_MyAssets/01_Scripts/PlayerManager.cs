@@ -8,9 +8,10 @@ public class PlayerManager : MonoBehaviour
     //Componente RigidBody
     [SerializeField] Rigidbody2D rb;
 
+
     //Variables que gestionan su desplazamiento y rotación
-    float jumpForce = 1;
-    float rotationSpeed = 1;
+    float jumpForce = 4;
+    float rotationSpeed = 4;
 
     private void Start()
     {
