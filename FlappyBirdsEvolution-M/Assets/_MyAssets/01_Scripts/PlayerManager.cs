@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerManager : MonoBehaviour
 {
     bool isAlive = true;
+    int lives = 3;
+    int shield = 100;
 
     //Componente RigidBody
     [SerializeField] Rigidbody2D rb;
@@ -13,10 +16,22 @@ public class PlayerManager : MonoBehaviour
     float jumpForce = 4;
     float rotationSpeed = 4;
 
+    [SerializeField] HudManager hudManager;
+
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        lives = 3;
+        shield = 100;
+        hudManager.UpdateHealth(shield);
+        hudManager.PrintMessage("¡¡¡Que empieze el Juego!!!");
+
+
         //Ponemos el tiempo a 1, por si venimos de la pantalla de GameOver, que lo pone a 0
         Time.timeScale = 1f;
+        
+
+        
     }
     // Update is called once per frame
     void Update()
@@ -55,6 +70,7 @@ public class PlayerManager : MonoBehaviour
         else if (collision.gameObject.tag == "Floor")
         {
             //Si chocamos con el suelo, deberíamos morir
+            isAlive = false;
             
         }
     }

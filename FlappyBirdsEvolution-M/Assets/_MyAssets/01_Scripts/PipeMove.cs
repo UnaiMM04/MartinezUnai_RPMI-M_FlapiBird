@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PipeMove : MonoBehaviour
 {
-    float speed = 5.0f;
+    float speed = 4.0f;
         
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
