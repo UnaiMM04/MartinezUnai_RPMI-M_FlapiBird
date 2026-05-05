@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    float maxY = 3f;
+    float maxY = 2f;
     float minY = 0f;
     [SerializeField] private GameObject prefabToSpawn;
     
